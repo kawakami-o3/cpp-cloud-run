@@ -1,2 +1,3 @@
 # cpp-cloud-run
-GCP Cloud Run Sample in C++
+
+Unfortunately, this sample doesn't work with GCP Cloud Run, although it workds on a local docker container.
