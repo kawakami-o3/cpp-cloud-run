@@ -17,4 +17,3 @@ gcloud builds submit --tag gcr.io/[PROJECT-ID]/server
 gcloud beta run deploy --image gcr.io/[PROJECT-ID]/server --platform managed
 ```
 
-Unfortunately, GCP Cloud Run responds 503.
