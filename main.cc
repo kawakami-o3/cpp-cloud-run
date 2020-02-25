@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
     int addrlen = sizeof(address);
     char buffer[1024] = {0};
 
-    const char *response = "HTTP1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<html><body>hello</body></html>\r\n\r\n";
+    const char *response = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<html><body>hello</body></html>\r\n\r\n";
 
     char *port_env;
     int port = 8081;
