@@ -15,8 +15,13 @@ int main(int argc, char const *argv[])
 
     const char *response = "HTTP1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<html><body>hello</body></html>\r\n\r\n";
 
-    int PORT = atoi(std::getenv("PORT"));
-    //int PORT = 8080;
+    char *port_env;
+    int port = 8081;
+
+    if ((port_env = std::getenv("PORT")) != nullptr)
+    {
+        port = atoi(port_env);
+    }
 
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
     {
@@ -31,7 +36,7 @@ int main(int argc, char const *argv[])
     }
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY;
-    address.sin_port = htons(PORT);
+    address.sin_port = htons(port);
 
     if (bind(server_fd, (struct sockaddr *)&address, sizeof(address)) < 0)
     {
